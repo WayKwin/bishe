@@ -1,19 +1,13 @@
 <?php
  namespace Admin\Model;
- use \Frame\Libs\Db;
- final class IndexModel
+ use \Frame\Libs\BaseModel;
+ final class IndexModel extends BaseModel
  {
-  private  $db = NULL;
-  public function _construct()
-  {
-    $this->db = Db::getInstance();
-
-  }
    public function fetchAll()
    {
      //构建查询语句 结果返回二维数组
-     $sql =  "SELECT * From sudent ORDER BY id DESC";
-     return $this->db->fetchAll($sql);
+     $sql =  "SELECT * From stu ORDER BY id DESC";
+     return $this->pdo->fetchAll($sql);
    }
  }
  ?>

@@ -10,4 +10,30 @@ define('APP_PATH',ROOT_PATH.'Home'.DS);//应用目录  前台home 后台 admin
 require_once(ROOT_PATH."Frame".DS."Frame.class.php");
  //框架初始化 命名空间的路径用\
  Frame\Frame::run();
+
+
+
+
+
+
+
+
+
+
+ /*测试 PDOWrapper对象*/
+ /*$pdo = new \Frame\Vendor\PDOWrapper();*/
+/*1.查看类型*/
+/* var_dump($pdo);*/
+/*2.插入数据*/
+ /*$pdo->exec("INSERT INTO `stu` (`id`, `name`) VALUES ('12', 'sb')");
+ $pdo->exec("INSERT INTO `stu` VALUES ('13','sj')");*/
+/*3.查找一行数据*/
+ /*$result = $pdo->fetchOne("SELECT * FROM `stu`");
+ print_r($result);*/
+/*4.获取全部数据*/
+ /*$result = $pdo->fetchALL("SELECT * FROM `stu`");
+ print_r($result);*/
+/*5. 获取数据多少行*/
+ /*$result = $pdo->rowCount("SELECT * FROM `stu`");
+ print_r($result);*/
  ?>

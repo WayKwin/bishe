@@ -6,11 +6,11 @@
   'db_type'  => 'mysql',
   'db_port' => '3306',
   'db_host' => 'localhost',
-  'db_name' => 'test',
-  'db_user' => 'root',
-  'db_password' =>'123',
-  'charset' =>'utf-8',
-
+  'db_name' => 'student',
+  'db_user' => 'waykwin',
+  'db_password' =>'123456',
+  /* PDO创建 字符集不识别 utf-8 去掉 '-'*/
+  'db_charset' =>'utf8',
   // 前端的默认url参数
   //默认平台就是url入口，即前台的入口
   'default_platform' =>'home',

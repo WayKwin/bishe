@@ -11,8 +11,9 @@ final class IndexController{
     $modeObj =  new IndexModel();
     //拉取后台数据
     $arrs  = $modeObj->fetchAll();
+    print_r($arrs);
     //展示到前台首页 /home/view/index/index.html
-    include VIEW_PATH."index.html";/*veiw_path 是frame中初始化的常量*/
+    //include VIEW_PATH."index.html";/*veiw_path 是frame中初始化的常量*/
     /*前台页面通过 二维数组arrs展示页面*/
   }
 }
