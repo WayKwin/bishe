@@ -28,17 +28,18 @@
     private static function initRoute()
     {
         $p = $GLOBALS['config']['default_platform'];// 入口文件
-        $c = isset($_GET['c'])?$c:$GLOBALS['config']['default_controller'];//判断 是否设置控制器,若没有，采用配置文件中默认的控制器
-        $a = isset($_GET['a'])?$c:$GLOBALS['config']['defalut_action'];//判断 是否设置控制器,若没有，采用配置文件中默认的控制器
+        $c = isset($_GET['c'])?$_GET['c']:$GLOBALS['config']['default_controller'];//判断 是否设置控制器,若没有，采用配置文件中默认的控制器
+        $a = isset($_GET['a'])?$_GET['a']:$GLOBALS['config']['defalut_action'];//判断 是否设置控制器,若没有，采用配置文件中默认的控制器
         define('PLAT',$p);
         define('CONTROLLER',$c);
-        define('ACTION',$c);
+        define('ACTION',$a);
     }
     //静态方法目录
     private static function initConst()
     {
-        //例如 ./home/View/Student/add.html
+        //例如 ./home/View/Student/
         define("VIEW_PATH"   ,APP_PATH."View".DS.CONTROLLER.DS);
+        define("FRAME_PATH",ROOT_PATH."Frame".DS);
     }
     /*
      需要控制器的类，就加载文件:控制器.class.php

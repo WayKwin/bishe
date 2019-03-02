@@ -18,8 +18,6 @@ require_once(ROOT_PATH."Frame".DS."Frame.class.php");
 
 
 
-
-
  /*测试 PDOWrapper对象*/
  /*$pdo = new \Frame\Vendor\PDOWrapper();*/
 /*1.查看类型*/
@@ -36,4 +34,8 @@ require_once(ROOT_PATH."Frame".DS."Frame.class.php");
 /*5. 获取数据多少行*/
  /*$result = $pdo->rowCount("SELECT * FROM `stu`");
  print_r($result);*/
+
+ /*测试Smarty*/
+//use Frame\Vendor\Smarty;
+//$obj =  new Smarty();
  ?>

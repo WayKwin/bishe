@@ -3,18 +3,24 @@ namespace Home\Controller;
 /*
 传入自动加载方法
 */
+use \Frame\Libs\BaseController;
 use \Home\Model\IndexModel;/*引入首页模型类*/
-final class IndexController{
-  public function Index()/*对应的action方法*/
+final class IndexController extends BaseController{
+  public function Index() /*对应的action方法*/
   {
-    //创建模型层对象
-    $modeObj =  new IndexModel();
-    //拉取后台数据
+    //创建模型层对象  //注意参数是字符窜， 类要加上空间+类名
+    $modeObj =  IndexModel::getInstance();
+   //拉取后台数据
     $arrs  = $modeObj->fetchAll();
-    print_r($arrs);
-    //展示到前台首页 /home/view/index/index.html
-    //include VIEW_PATH."index.html";/*veiw_path 是frame中初始化的常量*/
-    /*前台页面通过 二维数组arrs展示页面*/
+    $this->smarty->assign("arrs",$arrs);
+    $this->smarty->display("index.html");
+  }
+  public function delete()
+  {
+    $id = $_GET['id'];
+    echo $id;
+    $this->jump("删除成功","?c=Index");
+   // 创建模型类，  模型类中实现  deleteById的方法
   }
 }
  ?>
