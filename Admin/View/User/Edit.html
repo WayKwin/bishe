@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>社区消息发布系统后台管理</title>
+    <link rel="stylesheet" href="/毕设/Public/layui/css/layui.css">
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div id="top"></div>
+    <div id="left"></div>
+    <!-- 内容主体区域 -->
+    <div class="layui-body" >
+        <div style="padding: 15px;">
+            <h1> Edit页面</h1>
+        </div>
+    </div>
+    <div id="footer"></div>
+</div>
+<script src="/毕设/Public/layui/layui.js"></script>
+<script>
+    //JavaScript代码区域
+    layui.use('element', function(){
+        var element = layui.element;
+    });
+    //使用layui内置jquery
+    layui.use(['jquery', 'layer'], function(){
+        var $ = layui.$ //重点处
+            ,layer = layui.layer;
+        //后面就跟你平时使用jQuery一样
+        $("#top").load("?c=Common&a=top");//视图的加载必须通过控制器
+        //$("#top").load("/毕设/Admin/View/Common/top.html")
+        $("#left").load("?c=Common&a=left");
+        $("#center").load("?c=User&a=center");
+        $("#footer").load("?c=Common&a=footer")
+    });
+
+</script>
+</body>
+</html>

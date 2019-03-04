@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>社区消息管理系统后台管理</title>
+  <link rel="stylesheet" href="/毕设/Public/layui/css/layui.css">
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+  <div id="top"></div>
+  <div id="left"></div>
+      <!-- 内容主体区域 -->
+      <div class="layui-body" >
+        <table class="layui-table">
+                <colgroup>
+                </colgroup>
+                <thead>
+                <tr>
+                    <th>id</th>
+                    <th>用户名</th>
+                    <th>昵称</th>
+                    <th>电话</th>
+                    <th>最后登录ip地址</th>
+                    <th>最后登录时间</th>
+                    <th>账户状态</th>
+                    <th>管理权限</th>
+                    <th>注册时间</th>
+                </tr>
+                </thead>
+                <tbody>
+                <{foreach $arrs as $arr}>
+                <tr>
+                    <td><{$arr.id}></td>
+                    <td><{$arr.password}></td>
+                    <td><{$arr.tel}></td>
+                    <td><{$arr.last_login_ip}></td>
+                    <td><{$arr.last_login_time}></td>
+                    <td><{$arr.status}></td>
+                    <td><{$arr.role}></td>
+                    <td><{$arr.addate}></td>
+                    <td>
+                        <a href="javascript::void(0)">修改</a>
+                        <a href="javascript:void(0)" onClick="confirmDel(<{$arr.id}>)">删除</a>
+                    </td>
+                </tr>
+                <{/foreach}>
+                </tbody>
+            </table>
+        </div>
+      </div>
+  <div id="footer"></div>
+</div>
+<script src="/毕设/Public/layui/layui.js"></script>
+<script>
+    //JavaScript代码区域
+    layui.use('element', function(){
+        var element = layui.element;
+    });
+    //使用layui内置jquery
+    layui.use(['jquery', 'layer'], function(){
+        var $ = layui.$ //重点处
+            ,layer = layui.layer;
+        //后面就跟你平时使用jQuery一样
+        $("#top").load("?c=Common&a=top");//视图的加载必须通过控制器
+        //$("#top").load("/毕设/Admin/View/Common/top.html")
+        $("#left").load("?c=Common&a=left");
+        $("#center").load("?c=User&a=center");
+        $("#footer").load("?c=Common&a=footer")
+    });
+
+</script>
+</body>
+</html>

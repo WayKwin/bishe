@@ -5,7 +5,7 @@
    //数据库类型
   'db_type'  => 'mysql',
   'db_host' => 'localhost',
-  'db_name' => 'student',
+  'db_name' => 'bbs',
   'db_port' => '3306',
   'db_user' => 'waykwin',
   'db_password' =>'123456',
